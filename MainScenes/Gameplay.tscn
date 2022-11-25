@@ -10,8 +10,8 @@
 [node name="Gameplay" type="Node"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( -13, -12 )
-scale = Vector2( 3.18, 4.17333 )
+position = Vector2( -28, -31 )
+scale = Vector2( 10.0533, 10.04 )
 z_index = -100
 texture = ExtResource( 2 )
 centered = false
@@ -19,19 +19,17 @@ centered = false
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Background"]
 position = Vector2( 76.6593, 0.496689 )
 amount = 70
-lifetime = 10.0
+lifetime = 30.0
 texture = ExtResource( 3 )
 emission_shape = 2
 emission_rect_extents = Vector2( 80, 1 )
 direction = Vector2( 0, 1 )
 spread = 0.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 40.0
+initial_velocity = 12.97
 initial_velocity_random = 0.6
-angle = 52.8
-angle_random = 1.0
-scale_amount = 0.07
-scale_amount_random = 0.1
+scale_amount = 0.02
+scale_amount_random = 0.04
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -40,6 +38,7 @@ scale_amount_random = 0.1
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 229, 506 )
 z_index = 100
+speed = 600.0
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2( 234, -141 )

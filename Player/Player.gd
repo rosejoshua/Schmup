@@ -9,8 +9,8 @@ onready var fireDelayTimer := $FireDelayTimer
 onready var invincibilityTimer :=$InvincibilityTimer
 onready var shieldSprite := $Shield
 
-export var speed: float = 100
-export var fireDelay: float = 0.1
+export var speed: float = 400
+export var fireDelay: float = 0.05
 export var life: int = 3
 export var damageInvincibilityTime := 1.25
 var vel := Vector2(0,0)
