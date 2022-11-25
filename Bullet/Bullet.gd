@@ -2,7 +2,7 @@ extends Area2D
 
 var pBulletEffect := preload("res://Bullet/BulletEffect.tscn")
 
-export var speed: float = 500
+export var speed: float = 2000
 
 func _physics_process(delta):
 	position.y -= speed * delta
