@@ -1,14 +1,23 @@
 extends Area2D
+class_name Player
 
 var plBullet := preload("res://Bullet/Bullet.tscn")
 
 onready var animatedSprite := $AnimatedSprite
 onready var firingPositions := $FiringPositions
 onready var fireDelayTimer := $FireDelayTimer
+onready var invincibilityTimer :=$InvincibilityTimer
+onready var shieldSprite := $Shield
 
 export var speed: float = 100
 export var fireDelay: float = 0.1
+export var life: int = 3
+export var damageInvincibilityTime := 1.25
 var vel := Vector2(0,0)
+
+func _ready():
+	shieldSprite.visible = false
+	Signals.emit_signal("on_player_life_changed", life)
 
 func _process(delta):
 	if vel.x < 0:
@@ -45,3 +54,21 @@ func _physics_process(delta):
 	var viewRect := get_viewport_rect()
 	position.x = clamp(position.x, viewRect.position.x, viewRect.end.x)
 	position.y = clamp(position.y, viewRect.position.y, viewRect.end.y)
+
+func damage(amount: int):
+	if !invincibilityTimer.is_stopped():
+		return
+	
+	invincibilityTimer.start(damageInvincibilityTime)
+	shieldSprite.visible = true
+	life -= amount
+	Signals.emit_signal("on_player_life_changed", life)
+
+	var camera := get_tree().current_scene.find_node("Camera", true, false)
+	camera.shake(15)
+	
+	if life <= 0:
+		queue_free()
+
+func _on_InvincibilityTimer_timeout():
+	shieldSprite.visible = false

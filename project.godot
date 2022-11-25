@@ -8,11 +8,43 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Asteroid",
+"language": "GDScript",
+"path": "res://Asteroid/Asteroid.gd"
+}, {
+"base": "Area2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy/Enemy.gd"
+}, {
+"base": "Area2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "Enemy",
+"class": "SlowShooter",
+"language": "GDScript",
+"path": "res://Enemy/SlowShooter.gd"
+} ]
+_global_script_class_icons={
+"Asteroid": "",
+"Enemy": "",
+"Player": "",
+"SlowShooter": ""
+}
+
 [application]
 
 config/name="schmup"
 run/main_scene="res://MainScenes/Gameplay.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Signals="*res://Autoloads/Signals.gd"
 
 [display]
 
