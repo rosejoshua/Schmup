@@ -19,10 +19,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Enemy/Enemy.gd"
 }, {
+"base": "CPUParticles2D",
+"class": "Explosion",
+"language": "GDScript",
+"path": "res://Effects/Explosion.gd"
+}, {
 "base": "Area2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "CPUParticles2D",
+"class": "ShipGib",
+"language": "GDScript",
+"path": "res://Effects/ShipGib.gd"
 }, {
 "base": "Enemy",
 "class": "SlowShooter",
@@ -32,7 +42,9 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Asteroid": "",
 "Enemy": "",
+"Explosion": "",
 "Player": "",
+"ShipGib": "",
 "SlowShooter": ""
 }
 

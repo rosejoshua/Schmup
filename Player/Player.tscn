@@ -58,7 +58,7 @@ animation = "straight"
 [node name="FiringPositions" type="Node2D" parent="."]
 
 [node name="CenterGun" type="Node2D" parent="FiringPositions"]
-position = Vector2( -1, -30 )
+position = Vector2( 1, -30 )
 
 [node name="FireDelayTimer" type="Timer" parent="."]
 one_shot = true
